@@ -4,8 +4,8 @@
   "description": "todoapp",
   "main": "app.js",
   "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "strat": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "me",
   "license": "ISC",
@@ -15,5 +15,9 @@
     "ejs": "^2.5.6",
     "express": "^4.15.3",
     "mongoose": "^4.10.5"
-  }
+  },
+  "engine": {
+    "node": "v6.10.3",
+    "npm": "5.0.1"
+  },
 }
