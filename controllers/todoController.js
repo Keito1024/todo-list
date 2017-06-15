@@ -16,6 +16,10 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 module.exports = function(app){
 
+
+
+
+// 入力情報を取得
 app.get('/todo', function(req, res){
   //get data from mongodb and pass it to view
   Todo.find({},function(err,data){
@@ -25,6 +29,10 @@ app.get('/todo', function(req, res){
 
 });
 
+
+
+
+// 投稿機能
 app.post('/todo', urlencodedParser,function(req, res){
   //get data from view and add it to mongodb
   var newTodo = Todo(req.body).save(function(err,data){
@@ -33,6 +41,10 @@ app.post('/todo', urlencodedParser,function(req, res){
   })
 });
 
+
+
+
+// 削除機能
 app.delete('/todo/:item', function(req, res){
   //delete the requested item from mongodb
   Todo.find({item: req.params.item.replace(/\-/g, " ")}).remove(function(err,data){
