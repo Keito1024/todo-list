@@ -14,10 +14,20 @@
     "npm": "5.0.1"
   },
   "dependencies": {
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.18.2",
     "connect": "^3.6.2",
-    "ejs": "^2.5.6",
-    "express": "^4.15.3",
-    "mongoose": "^4.10.5"
-  }
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-validator": "^4.3.0",
+    "mongoose": "^4.13.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keito1024/todo-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Keito1024/todo-list/issues"
+  },
+  "homepage": "https://github.com/Keito1024/todo-list#readme"
 }
