@@ -20,9 +20,9 @@
       <ul>
         <% for(var i=0; i < todos.length; i++){ %>
           <li class="<%= todos[i].limitDate < new Date() ? 'kigengire' : '' %>">
-            <%= todos[i].item %>
+            タスク　：<%= todos[i].item %>
             <br>
-            <%= todos[i].limitDate %>
+            完了期限：<%= todos[i].limitDate.toLocaleDateString() %>
           </li>
         <% } %>
       </ul>
