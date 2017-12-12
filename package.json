@@ -19,6 +19,7 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-validator": "^4.3.0",
+    "jquery-validation": "^1.17.0",
     "mongoose": "^4.13.6"
   },
   "devDependencies": {},

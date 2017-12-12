@@ -1,5 +1,9 @@
+
+var mongoose = require('mongoose');
 var express = require('express');
 var todoController = require('./controllers/todoController');
+//connect to the datebase
+mongoose.connect('mongodb://test:test@ds113702.mlab.com:13702/todo');
 
 var app = express();
 

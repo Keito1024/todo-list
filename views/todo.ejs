@@ -3,6 +3,8 @@
     <meta charset="utf-8">
     <title>Todo List</title>
     <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+    <script type="text/JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" ></script>
+
     <script type="text/javascript" src="/assets/todo-list.js"></script>
 
     <link href="/assets/styles.css" rel="stylesheet" type="text/css">
@@ -10,15 +12,18 @@
   <body>
     <h1>ToDo List</h1>
     <div id="todo-table">
-      <form name="keito">
+      <form id="task-form" class="clearfix">
         <input type="text" name="item" placeholder="新しいタスク入力...">
-        <input type="date" name="limitDate" id = "today">
+        <input type="date" name="limitDate" id = "deadline">
         <button type="submit">タスク追加</button>
       </form>
       <ul>
         <% for(var i=0; i < todos.length; i++){ %>
-          <li><%= todos[i].item %></li>
-          <li><%= todos[i].limitDate%></li>
+          <li class="<%= todos[i].limitDate < new Date() ? 'kigengire' : '' %>">
+            <%= todos[i].item %>
+            <br>
+            <%= todos[i].limitDate %>
+          </li>
         <% } %>
       </ul>
     </div>

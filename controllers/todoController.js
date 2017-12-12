@@ -1,24 +1,12 @@
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-
-//connect to the datebase
-mongoose.connect('mongodb://test:test@ds113702.mlab.com:13702/todo');
+var Todo = require('../models/todo');
 
 //Create a schema - this is like a blueprint
-var todoSchema = new mongoose.Schema({
-  item: String,
-  limitDate: Date
-});
-
-var Todo = mongoose.model('Todo', todoSchema);
 var urlencodedParser = bodyParser.urlencoded({
   extended: false
 });
 
 module.exports = function(app) {
-
-
-
 
   // 入力情報を取得
   app.get('/todo', function(req, res) {

@@ -1,6 +1,34 @@
 $(document).ready(function() {
+  $('#task-form').validate({
+    errorClass: 'valid-err',
+    rules: {
+      'item': {
+        required: true,
+        maxlength: 20
+      },
+      'limitDate': {
+        required: true,
+      }
+    },
+    messages: {
+      item: {
+        required: 'タスクを入力してください',
+      },
+      limitDate: {
+        required: '期限を入力してください'
+      }
+    }
+  });
 
-  $('form').on('submit', function() {
+  $('form').on('submit', function(e) {
+    e.preventDefault()
+    if (!$('#task-form').valid()) {
+      console.log('error');
+      return;
+    }
+
+    console.log('success');
+
 
     var item = $('form input');
     var limitDate = $('form input');
@@ -14,7 +42,7 @@ $(document).ready(function() {
     $.ajax({
       type: 'POST',
       url: '/todo',
-      data: limitDate,
+      data: item,
       success: function(data) {
         //do something with the data via front-end framework
         location.reload();
@@ -36,11 +64,14 @@ $(document).ready(function() {
       }
     });
   });
-
 });
-
 window.onload = function() {
+  //今日の日時を表示
   var date = new Date()
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+
   var toTwoDigits = function(num, digit) {
     num += ''
     if (num.length < digit) {
@@ -48,11 +79,4 @@ window.onload = function() {
     }
     return num
   }
-
-  var yyyy = toTwoDigits(year, 4)
-  var mm = toTwoDigits(month, 2)
-  var dd = toTwoDigits(day, 2)
-  var ymd = yyyy + "-" + mm + "-" + dd;
-
-  document.getElementById("today").value = ymd;
 }
