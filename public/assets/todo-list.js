@@ -23,12 +23,8 @@ $(document).ready(function() {
   $('form').on('submit', function(e) {
     e.preventDefault()
     if (!$('#task-form').valid()) {
-      console.log('error');
       return;
     }
-
-    console.log('success');
-
 
     var item = $('form input');
     var limitDate = $('form input');

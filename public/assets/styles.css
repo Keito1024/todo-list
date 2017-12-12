@@ -80,16 +80,12 @@ li {
   font-size: 20px;
   cursor: pointer;
   letter-spacing: 1px;
+  border: 1px solid;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .kigengire {
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  font-family: arial;
-  font-size: 20px;
-  cursor: pointer;
-  letter-spacing: 1px;
   background-color: #2F4F4F;
 }
 
