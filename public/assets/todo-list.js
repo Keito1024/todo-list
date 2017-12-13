@@ -50,7 +50,7 @@ $(document).ready(function() {
   });
 
   $('li').on('click', function() {
-    var item = $(this).text().replace(/ /g, "-");
+    var item = $(this).attr("data-item").replace(/ /g, "-");
     $.ajax({
       type: 'DELETE',
       url: '/todo/' + item,

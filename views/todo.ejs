@@ -19,7 +19,7 @@
       </form>
       <ul>
         <% for(var i=0; i < todos.length; i++){ %>
-          <li class="<%= todos[i].limitDate < new Date() ? 'kigengire' : '' %>">
+          <li data-item="<%= todos[i].item %>" class="<%= todos[i].limitDate < new Date() ? 'kigengire' : '' %>">
             タスク　：<%= todos[i].item %>
             <br>
             完了期限：<%= todos[i].limitDate.toLocaleDateString() %>
